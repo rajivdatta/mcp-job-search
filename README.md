@@ -1,5 +1,7 @@
 # mcp-job-search
 
+[![CI](https://github.com/rajivdatta/mcp-job-search/actions/workflows/ci.yml/badge.svg)](https://github.com/rajivdatta/mcp-job-search/actions/workflows/ci.yml)
+
 An MCP server that finds **recent job postings based on your LinkedIn profile**,
 scores each against your **resume**, and logs the results — all without logging
 into or scraping LinkedIn.
