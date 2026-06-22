@@ -173,8 +173,11 @@ or non-skill credential gates. Tune the skill sets and constants at the top of
 ## Output & privacy
 
 - `logs/` — text logs of each search/match run
-- `reports/` — a styled HTML match report per day
-- `state/seen_jobs.json` — the dedupe memory
+- `reports/job_match_<date>.html` — a **cumulative** styled match report per day.
+  Re-running on the same day merges in new matches and keeps earlier ones; the
+  latest run's additions are flagged **NEW** (so a second run never shrinks it).
+- `state/seen_jobs.json` — the all-time dedupe memory
+- `state/results_<date>.json` — today's accumulated matches (backs the cumulative report)
 
 `.env`, `config.json`, `logs/`, `reports/`, `state/`, and the export folder are
 all git-ignored — nothing personal is committed.
