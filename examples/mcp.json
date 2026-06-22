@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "job-search": {
+      "command": "C:\\path\\to\\mcp-job-search\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\path\\to\\mcp-job-search\\server.py"],
+      "env": {
+        "RAPIDAPI_KEY": "your-rapidapi-key-or-set-in-.env"
+      }
+    }
+  }
+}

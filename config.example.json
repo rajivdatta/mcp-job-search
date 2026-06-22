@@ -1,0 +1,13 @@
+{
+  "linkedin_export_dir": "C:\\path\\to\\LinkedInExport",
+  "resume_path": "C:\\path\\to\\resume.pdf",
+  "location": "City, Region, Country",
+  "country": "us",
+  "date_posted": "week",
+  "num_pages": 1,
+  "max_queries": 3,
+  "log_dir": "logs",
+  "query_override": [],
+  "only_linkedin": true,
+  "only_new": true
+}
