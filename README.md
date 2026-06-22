@@ -147,6 +147,29 @@ Restart your MCP client, then try: *"using job-search, match jobs"*.
 
 ---
 
+## Scheduling (optional)
+
+To run the search automatically each day, use the included helpers — they call
+the same `match_jobs` logic directly, so no MCP host needs to be running:
+
+- `run_daily.py` — runs `match_jobs`, writes the report/log, appends a status
+  line to `logs/daily_runs.log`.
+- `run_daily_hidden.vbs` — launches `run_daily.py` via the venv Python with **no
+  console window** (self-locating; works from any folder).
+- `setup_schedule.ps1` — registers a Windows Scheduled Task.
+
+```powershell
+# from the repo folder, after creating .venv and installing requirements:
+.\setup_schedule.ps1               # daily at 16:00 (4 PM)
+.\setup_schedule.ps1 -At "08:30"   # custom time
+```
+
+The task runs when you're logged on. To run while logged off, enable "Run
+whether the user is logged on or not" in Task Scheduler (stores your password).
+Remove it with `Unregister-ScheduledTask -TaskName "MCP Job Search Daily"`.
+
+On macOS/Linux, schedule `python run_daily.py` with cron instead.
+
 ## Dedupe across runs
 
 With `only_new: true`, `search_jobs` and `match_jobs` remember every posting they
